@@ -1,0 +1,110 @@
+SELECT [PROPERTY_ID]
+      ,[COUNTRY]
+      ,[PROVINCE]
+      ,[CITY]
+      ,[PROPERTY_PRICE]
+      ,[BEDROOMS]
+      ,[BATHROOMS]
+      ,[PARKING]
+      ,[FLOOR_SIZE]
+      ,[Monthly_Repayment]
+      ,[Total_Once_off_Costs]
+      ,[Min_Gross_Monthly_Income]
+  FROM [property24].[dbo].[1770794941712_property24]
+
+  -- Question 1
+  SELECT*FROM [property24].[dbo].[1770794941712_property24];
+   
+
+-- Question 2
+SELECT CITY,PROVINCE,PROPERTY_PRICE
+  FROM [property24].[dbo].[1770794941712_property24];
+
+--Question 3
+ SELECT DISTINCT PROVINCE
+  FROM [property24].[dbo].[1770794941712_property24];
+
+  --Question 4
+ SELECT *FROM [property24].[dbo].[1770794941712_property24]
+ WHERE PROVINCE='GAUTENG';
+
+-- Question 5
+SELECT*FROM [property24].[dbo].[1770794941712_property24]
+WHERE PROPERTY_PRICE<1500000;
+  
+-- Question 6
+ SELECT* FROM [property24].[dbo].[1770794941712_property24]
+ WHERE BEDROOMS>3;
+
+--Question 7
+SELECT* FROM [property24].[dbo].[1770794941712_property24]
+ WHERE PARKING>=3;
+
+ --Question 8
+ SELECT* FROM [property24].[dbo].[1770794941712_property24]
+ WHERE MONTHLY_REPAYMENT = 25000;
+
+ --Question 9
+  SELECT* FROM [property24].[dbo].[1770794941712_property24]
+  ORDER BY PROPERTY_PRICE DESC;
+
+  --Question 10
+SELECT* FROM [property24].[dbo].[1770794941712_property24]
+ORDER BY FLOOR_SIZE ASC;
+
+--Question 11
+SELECT* FROM [property24].[dbo].[1770794941712_property24]
+WHERE PROVINCE = 'Gauteng'
+ORDER BY MONTHLY_REPAYMENT;
+
+--Question 12
+SELECT* FROM [property24].[dbo].[1770794941712_property24]
+WHERE PROVINCE = 'EASTERN CAPE' AND PROPERTY_PRICE <3000000;
+
+--Question 13
+SELECT* FROM [property24].[dbo].[1770794941712_property24]
+WHERE PROVINCE = 'KWAZULU_NATAL' AND BEDROOMS >=3;
+
+--Question 14
+SELECT* FROM [property24].[dbo].[1770794941712_property24]
+WHERE PROVINCE IN('LIMPOPO','FREE STATE')
+ORDER BY PROPERTY_PRICE ASC;
+
+--Question 15
+SELECT TOP 10*
+FROM [property24].[dbo].[1770794941712_property24]
+ORDER BY PROPERTY_PRICE ASC;
+
+--Question 16
+SELECT TOP 5*
+FROM [property24].[dbo].[1770794941712_property24]
+ORDER BY PROPERTY_PRICE DESC;
+
+--Question 17
+SELECT TOP 10*
+FROM [property24].[dbo].[1770794941712_property24]
+ORDER BY FLOOR_SIZE DESC;
+
+--Question 18
+SELECT PROVINCE, MAX (PROPERTY_PRICE) As
+HIGHEST_PRICE
+FROM [property24].[dbo].[1770794941712_property24]
+GROUP BY PROVINCE
+ORDER BY HIGHEST_PRICE DESC;
+
+--Question 19
+SELECT TOP 10 CITY,PROVINCE,PROPERTY_PRICE
+FROM [property24].[dbo].[1770794941712_property24]
+ORDER BY PROPERTY_PRICE ASC;
+
+--Question 20
+SELECT TOP 1
+MIN_GROSS_MONTHLY_INCOME
+PROPERTY_PRICE
+FROM [property24].[dbo].[1770794941712_property24]
+WHERE   PROPERTY_PRICE>4000000
+ORDER BY MIN_GROSS_MONTHLY_INCOME ASC;
+
+
+
+
