@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://portal.brightlearn.co.za/module/data-engineering-82dc/content/exercises-memos -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <!--<base href="/">--><base href=".">
+
+  
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="BrightLearn learning platform.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="BrightLearn">
+  <link rel="apple-touch-icon" href="https://portal.brightlearn.co.za/icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://portal.brightlearn.co.za/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  
+
+  <title>BrightLearn</title>
+  <link rel="manifest" href="https://portal.brightlearn.co.za/manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "1895620884";
+  </script>
+  <script src="./BrightLearn_files/pdf.min.mjs" type="module"></script>
+  <script type="module">
+    var { pdfjsLib } = globalThis;
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.worker.mjs";
+    var pdfRenderOptions = {
+      cMapUrl: "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/cmaps/",
+      cMapPacked: true,
+    };
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="./BrightLearn_files/flutter.js.download" defer=""></script>
+<script type="application/javascript" src="./BrightLearn_files/main.dart.js.download"></script><meta name="generator" content="Flutter"><meta flt-viewport="" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta id="flutterweb-theme" name="theme-color" content="rgba(0,0,0,0)"></head>
+
+<body flt-embedding="full-page" flt-renderer="canvaskit" flt-build-mode="release" spellcheck="false" style="position: fixed; inset: 0px; overflow: hidden; padding: 0px; margin: 0px; user-select: none; touch-action: none; cursor: pointer;"><flt-semantics-placeholder role="button" aria-live="polite" tabindex="0" aria-label="Enable accessibility" style="position: absolute; left: -1px; top: -1px; width: 1px; height: 1px;"></flt-semantics-placeholder>
+  <style>
+    
+    :root {
+      --bg: #F9FAFB;
+      --surface: #FFFFFF;
+      --text: #111827;
+      --muted: #4B5563;
+      --border: #E5E7EB;
+      --accent: #F07F2A;
+    }
+
+    body {
+      background:
+        radial-gradient(780px 480px at 18% 12%, rgba(15, 118, 110, 0.12), transparent 60%),
+        radial-gradient(620px 380px at 82% 8%, rgba(17, 94, 89, 0.1), transparent 60%),
+        var(--bg);
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      inset: 0px;
+      overflow: hidden;
+      padding: 0px;
+      margin: 0px;
+      user-select: none;
+      touch-action: none;
+      font-family: "Helvetica", "Arial", sans-serif;
+    }
+
+    .main-content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.4s ease-out;
+    }
+
+    .splash {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      animation: logo-pop 1.2s ease-in-out infinite;
+    }
+
+    .slogan {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .loader {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 14px;
+    }
+
+    .loader span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.2;
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    .loader span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loader span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes pulse {
+      0%, 80%, 100% {
+        opacity: 0.2;
+        transform: scale(0.9);
+      }
+      40% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes logo-pop {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      35% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      70% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(0px);
+      }
+    }
+  </style>
+  <script>
+    function delay(time) {
+      return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    window.addEventListener('load', function (ev) {
+      var loaderContent = document.querySelector('#loader-content');
+      var splashStart = performance.now();
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function (engineInitializer) {
+        return engineInitializer.initializeEngine();
+      }).then(async function (appRunner) {
+        var elapsed = performance.now() - splashStart;
+        var remaining = Math.max(0, 200 - elapsed);
+        if (remaining > 0) {
+          await delay(remaining);
+        }
+        loaderContent.style.opacity = "0";
+        await delay(400);
+        await appRunner.runApp();
+      });
+    });
+  </script>
+  <div class="main-content" id="loader-content" style="opacity: 0;">
+    <div class="splash" role="status" aria-live="polite">
+      <img class="logo" src="./BrightLearn_files/brightlearn_logo.svg" alt="BrightLearn logo" onerror="this.onerror=null;this.src=&#39;/assets/logo.png&#39;;">
+      <div class="slogan">Learning made bright.</div>
+      <div class="loader" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+
+
+<flt-announcement-host><flt-announcement-polite aria-live="polite" style="position: fixed; overflow: hidden; transform: translate(-99999px, -99999px); width: 1px; height: 1px;"></flt-announcement-polite><flt-announcement-assertive aria-live="assertive" style="position: fixed; overflow: hidden; transform: translate(-99999px, -99999px); width: 1px; height: 1px;"></flt-announcement-assertive></flt-announcement-host><flt-image-picker-inputs id="__image_picker_web-file-input"></flt-image-picker-inputs><flutter-view flt-view-id="0" tabindex="-1" style="position: absolute; inset: 0px; width: 1528px; height: 732px;"><flt-glass-pane><template shadowrootmode="open"><flt-scene-host style="pointer-events: none;"><flt-scene><flt-canvas-container><canvas aria-hidden="true" width="1910" height="915" style="position: absolute; width: 1528px; height: 732px;"></canvas></flt-canvas-container></flt-scene></flt-scene-host><style id="flt-internals-stylesheet"> flt-scene-host {  font: normal normal 14px sans-serif;} flt-semantics input[type=range] {  appearance: none;  -webkit-appearance: none;  width: 100%;  position: absolute;  border: none;  top: 0;  right: 0;  bottom: 0;  left: 0;} input::selection {  background-color: transparent;} textarea::selection {  background-color: transparent;} flt-semantics input, flt-semantics textarea, flt-semantics [contentEditable="true"] {  caret-color: transparent;} .flt-text-editing::placeholder {  opacity: 0;}:focus { outline: none;} .transparentTextEditing:-webkit-autofill, .transparentTextEditing:-webkit-autofill:hover, .transparentTextEditing:-webkit-autofill:focus, .transparentTextEditing:-webkit-autofill:active {  opacity: 0 !important;} input::-ms-reveal {  display: none;}</style></template></flt-glass-pane><flt-text-editing-host></flt-text-editing-host><flt-semantics-host style="position: absolute; transform-origin: 0px 0px 0px; transform: scale(0.8);"></flt-semantics-host><style id="flt-text-editing-stylesheet">flutter-view flt-scene-host {  font: normal normal 14px sans-serif;}flutter-view flt-semantics input[type=range] {  appearance: none;  -webkit-appearance: none;  width: 100%;  position: absolute;  border: none;  top: 0;  right: 0;  bottom: 0;  left: 0;}flutter-view input::selection {  background-color: transparent;}flutter-view textarea::selection {  background-color: transparent;}flutter-view flt-semantics input,flutter-view flt-semantics textarea,flutter-view flt-semantics [contentEditable="true"] {  caret-color: transparent;}flutter-view .flt-text-editing::placeholder {  opacity: 0;}flutter-view:focus { outline: none;}flutter-view .transparentTextEditing:-webkit-autofill,flutter-view .transparentTextEditing:-webkit-autofill:hover,flutter-view .transparentTextEditing:-webkit-autofill:focus,flutter-view .transparentTextEditing:-webkit-autofill:active {  opacity: 0 !important;}flutter-view input::-ms-reveal {  display: none;}</style></flutter-view></body></html>
